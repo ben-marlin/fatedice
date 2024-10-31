@@ -1,4 +1,4 @@
-# Project XX: The FATE Dice Roller
+# Project 15: The FATE Dice Roller
 
 I know you're probably tired of rolling dice, but this is a new twist. In a roleplaying game called FATE, we frequently roll 4 dice. The sides are labeled ⊞, ⊟, □. Each plus adds 1 to the roll, each minus subtracts 1. The total ranges between -4 and +4, with the more extreme values being less likely.
 

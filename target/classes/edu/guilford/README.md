@@ -1,4 +1,4 @@
-# Project XX: The FATE Dice Roller
+# Project 15: The FATE Dice Roller
 
 I know you're probably tired of rolling dice, but this is a new twist. In a roleplaying game called FATE, we frequently roll 4 dice. The sides are labeled ⊞, ⊟, □. Each plus adds 1 to the roll, each minus subtracts 1. The total ranges between -4 and +4, with the more extreme values being less likely.
 
@@ -48,10 +48,14 @@ setTitle("FATE Dice Roller");
 setSize(400, 200);
 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 setLayout(new BorderLayout());
+
+setVisible(true);   // keep this as the last line in the constructor!
 ```
 The first three should be self-explanatory. The width of 400 pixels looked good to me, but your monitor may be different. 
 
-The last one simply tells the JFrame how to arrange things. There are five panes: NORTH, SOUTH, EAST, WEST, and CENTER. The center is bigger than the others, and if any panes are empty, adjacent ones expand to fill it. There's nothing in them now, so it won't affect anything.
+The BorderLayout simply tells the JFrame how to arrange things. There are five panes: NORTH, SOUTH, EAST, WEST, and CENTER. The center is bigger than the others, and if any panes are empty, adjacent ones expand to fill it. There's nothing in them now, so it won't affect anything.
+
+We are going to start using the practice of setting visibility as the last thing in the constructor. This will make the main method shorter! And if you do anything in the constructor after setting visibility, it will mess up the display. So add the code that comes later before the visibility line!
 
 ## Making it run
 
@@ -79,7 +83,7 @@ After the layout line, but before the for loop, add the following code.
 JPanel dicePanel = new JPanel();
 dicePanel.setLayout(new GridLayout(1, 4, 10, 10));  // 1x4 grid with spacing
 ```
-This will create a "container" that's going to hold the buttons laid out like a grid. The 1x4 should be clear (although I think it was assembled backwards) and the 10s represent "padding" on each spot. To add the buttons to the panel, you need to add the following inside the for loop: `dicePanel.add(diceLabels[i]);`.
+This will create a "container" that's going to hold the buttons laid out like a grid. The 1x4 should be clear and the 10s represent "padding" on each spot. To add the buttons to the panel, you need to **add the following inside the for loop**: `dicePanel.add(diceLabels[i]);`.
 
 ## Add the Panel
 
@@ -103,7 +107,7 @@ You should test it at this point - it should make four squares in the middle and
 
 Add `rollButton.addActionListener(new RollDiceAction());` after adding the rollButton. You'll get an error because you haven't defined what this action listener thing should do. 
 
-An ActionListener is a class which is fairly abstract. Whereas buttons and labels are things we can see, the ActionListener is something that resides in memory waiting for you to click the button it's listening to. Then it runs its one method, actionPerformed. To implement this, add the following code after the constructor but before the main method.
+An ActionListener is a class which is fairly abstract. Whereas buttons and labels are things we can see, the ActionListener is something that resides in memory waiting for you to click the button it's "listening" to. Then it runs its one method, actionPerformed. To implement this, add the following code **after the constructor** but **before the main method**.
 ```
 // Action listener to handle dice rolling
 private class RollDiceAction implements ActionListener {
@@ -131,7 +135,7 @@ This uses a new trick we haven't discussed before, but it will be familiar to an
 
 As we've done before, we use the randomizer to get a number 0 to 2. Then we do another neat trick for setting the text of label. Rather than writing if statements, we use DICE_RESULTS, and read out the entry corresponding to the random result.
 
-At this point, your button click should make the FATE dice roll. There are legitimately paid phone apps that do just this!
+At this point, your button click should make the FATE dice roll. There are legitimately phone apps in the app stores that do just this!
 
 ## Wrapping Up
 

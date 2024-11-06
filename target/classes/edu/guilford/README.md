@@ -66,7 +66,7 @@ These labels are going to display the dice rolls. Recall that we declared them w
 // Initialize 4 JLabel squares for dice results
 for (int i = 0; i < 4; i++) {
     diceLabels[i] = new JLabel(DICE_RESULTS[2], SwingConstants.CENTER);  // Start with blank square
-    diceLabels[i].setFont(new Font("Arial", Font.PLAIN, 100));  // Large font for symbols
+    diceLabels[i].setFont(new Font("Arial Unicode MS", Font.PLAIN, 100));  // Large font for symbols
 }
 ```
 I chose the font size 100 because it was easy for my eyes. If you adjust it up or down, you may want to adjust the width of 400 appropriately.

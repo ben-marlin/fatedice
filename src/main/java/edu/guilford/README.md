@@ -75,6 +75,8 @@ for (int i = 0; i < 4; i++) {
 ```
 I chose the font size 100 because it was easy for my eyes. If you adjust it up or down, you may want to adjust the width of 400 appropriately.
 
+**Note:** A previous version of this project used Arial instead of Arial Unicode MS. We found that not all fonts support Unicode!
+
 ## Pack the Labels in a Panel
 
 After the layout line, but before the for loop, add the following code.
@@ -136,6 +138,10 @@ This uses a new trick we haven't discussed before, but it will be familiar to an
 As we've done before, we use the randomizer to get a number 0 to 2. Then we do another neat trick for setting the text of label. Rather than writing if statements, we use DICE_RESULTS, and read out the entry corresponding to the random result.
 
 At this point, your button click should make the FATE dice roll. There are legitimately phone apps in the app stores that do just this!
+
+## Touch up
+
+If your app produces dots on the label instead of characters, try resizing the window. You should adjust the `setSize` parameters. For full credit, the final version should produce the visible characters when run.
 
 ## Wrapping Up
 
